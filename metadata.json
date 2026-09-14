@@ -1,0 +1,6 @@
+{
+  "name": "AI Seyahat Planlayıcı",
+  "description": "Yapay zeka destekli seyahat rotası ve detaylı gezi planlama asistanı.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

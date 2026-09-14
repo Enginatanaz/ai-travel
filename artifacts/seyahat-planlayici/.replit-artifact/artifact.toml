@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Seyahat Planlayıcı"
+description = "Kullanıcıların destinasyon, tarih, seyahat tarzı, bütçe ve ulaşım tercihlerini girerek kişiselleştirilmiş seyahat planı oluşturmaya başlayabildiği modern Türkçe web uygulaması."
+version = "1.0.0"
+id = "artifacts/seyahat-planlayici"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20872
+
+[services.development]
+run = "pnpm --filter @workspace/seyahat-planlayici run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/seyahat-planlayici", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/seyahat-planlayici/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20872"
+BASE_PATH = "/"
